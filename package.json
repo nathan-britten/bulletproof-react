@@ -64,8 +64,14 @@
     "rollup-plugin-dts": "^4.2.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "{cypress,src}/**/*.{ts,tsx,js,jsx}": [
+      "yarn lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
+      "git add --force"
+    ]
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
