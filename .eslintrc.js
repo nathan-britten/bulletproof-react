@@ -2,7 +2,9 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
+  ignorePatterns: ["./scripts/*.js"],
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
