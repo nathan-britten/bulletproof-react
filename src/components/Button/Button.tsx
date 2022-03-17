@@ -6,7 +6,7 @@ export interface Props {
 }
 
 function Button(props: Props) {
-  const hello = 'hello'
+  const hello = "hello";
   const { label } = props;
 
   return <MuiButton>{label}</MuiButton>;
