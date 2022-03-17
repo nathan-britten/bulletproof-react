@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [

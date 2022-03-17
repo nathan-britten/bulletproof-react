@@ -18,7 +18,7 @@
     "declarationDir": "types",
     "sourceMap": true,
     "outDir": "dist",
-    "emitDeclarationOnly": true
+    "noEmit": true
   },
   "include": ["src", "types"],
   "exclude": ["node_modules"]
