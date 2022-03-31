@@ -7,12 +7,13 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.1",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
+    "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "babel-loader": "^8.2.4",
     "lint-staged": ">=10",
     "node": "16.13.1",
     "react": "^17.0.2",
@@ -30,12 +31,24 @@
     "rollup": "rollup -c",
     "typecheck": "tsc --noEmit",
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
-    "lint:eslint:fix": "eslint --no-error-on-unmatched-pattern --fix --max-warnings=0"
+    "lint:eslint:fix": "eslint --no-error-on-unmatched-pattern --fix --max-warnings=0",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -51,19 +64,32 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-storybook": "^0.5.7",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
     "rollup": "^2.70.1",
-    "rollup-plugin-dts": "^4.2.0"
+    "rollup-plugin-dts": "^4.2.0",
+    "webpack": "^5.70.0"
   },
   "lint-staged": {
     "{cypress,src}/**/*.{ts,tsx,js,jsx}": [
